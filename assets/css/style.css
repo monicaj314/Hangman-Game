@@ -1,4 +1,19 @@
+body {
+	font-size: 10rem;
+}
+
 #newAnswerDiv {
-font-family: "Geneva";
-font-size: xx-large;
+	font-family: "Geneva";
+	font-size: xx-large;
+}
+
+#wins, #losses {
+	display: inline-block;
+	text-align:center;
+}
+#guessedWrong, #warning {
+	display:block;
+}
+.warning-container {
+	min-height: 1.5em;
 }
