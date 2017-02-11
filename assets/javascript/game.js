@@ -25,11 +25,11 @@ $("body").on("keypress", function(e) {
 	} else if (alreadyGuessed == -1) {
 		maxGuesses--;
 		wrongGuess.push(e.key);
-        $("#guessedWrong").text("Letters Guessed: " + wrongGuess.join(", "));
+        $("#guessedWrong").text(wrongGuess.join(", "));
         console.log(wrongGuess);
         console.log(e.key);
     } else {
-    	$("#warning").text("You've already guessed " + e.key + ", and it was wrong. Try another letter!").fadeIn(250).fadeOut(3000);
+    	$("#warning").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
     	}
 	}	
 })
@@ -59,10 +59,10 @@ function init() {
 		newAnswer = newAnswer + "_";
 	} 
 	var newAnswerDiv = $('<div id="newAnswerDiv"></div>');
-	$("#answer").text("Guess the letters!");
+	$("#answer").text("");
 	$("#answer").append(newAnswerDiv);
 	$("#newAnswerDiv").append(newAnswer);
-	$("#guessedWrong").text("Letters Guessed: ");
+	$("#guessedWrong").text("");
 	console.log(answer);
 }
 

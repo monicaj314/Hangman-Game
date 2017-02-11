@@ -1,19 +1,39 @@
-body {
-	font-size: 10rem;
+div.bordered > h1 {
+	text-align:center;
 }
-
+h5 {
+	text-align:center;
+	margin-top:3em;
+}
 #newAnswerDiv {
 	font-family: "Geneva";
-	font-size: xx-large;
+	font-size: 2em;
+	text-align: center;
+	margin-top:1.5em;
 }
-
 #wins, #losses {
 	display: inline-block;
 	text-align:center;
+	float-right;
 }
 #guessedWrong, #warning {
 	display:block;
+	text-align:center;
+	margin-top:1.5em;
+	min-height: 5em;
+}
+#guessedWrong {
+	max-width: 90%;
+	margin:auto;
+	border: dotted black 1px;
+	font-size:1.5em;
+}
+.bordered{
+	border: solid black 1px;
+	min-height: 45em;
+	min-width: 40%;
 }
 .warning-container {
-	min-height: 1.5em;
+	margin:2px;
+	font-size: 1.5em;
 }
