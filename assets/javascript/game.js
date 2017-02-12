@@ -9,8 +9,15 @@ var winCount = 0;
 var lossCount = 0;
 var maxGuesses = 7;
 var gameOver = false;
+var hangman = ["assets/images/gallow.jpg", "assets/images/1wrong.jpg", "assets/images/2wrong.jpg", "assets/images/3wrong.jpg", "assets/images/4wrong.jpg", "assets/images/5wrong.jpg", "assets/images/6wrong.jpg", "assets/images/7wrong.jpg"];
+var wrongAnswer = 0;
+
 
 init();
+
+function setPic() {
+  $("#gallow").html('<img src=' + hangman[wrongAnswer] + ' width="450">');
+}
 
 //wrong guesses collected in a separate container. Right guesses fill in the blanks
 
@@ -25,6 +32,8 @@ $("body").on("keypress", function(e) {
 	} else if (alreadyGuessed == -1) {
 		maxGuesses--;
 		wrongGuess.push(e.key);
+		wrongAnswer++
+		setPic();
         $("#guessedWrong").text(wrongGuess.join(", "));
         console.log(wrongGuess);
         console.log(e.key);
