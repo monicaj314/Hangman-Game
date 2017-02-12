@@ -40,27 +40,27 @@ $("body").on("keypress", function(e) {
 		$("#guesses-remaining").text("Guesses Remaining: " + maxGuesses);
         $("#guessedWrong").text(wrongGuess.join(", "));
     } else {
-    	$("#warning").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
+    	$("#message").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
     	}
 	}	
+	 checkGameStatus();
 })
 
-	$("body").on("keyup", function() {
+	function checkGameStatus(){
 	if (gameOver) {
 		init();
 	}
 	if (newAnswer === answer) {
-    	// alert("You WON!");
     	winCount++;
+    	$("#message").text("Yay, you won! (^.^) Press any key to restart.");
     	gameOver=true;
-	} 	else if (maxGuesses === 0) {
-		// alert("You LOST!");
+	} 	else if (maxGuesses < 1) {
 		lossCount++ ;
 		gameOver=true;
 	}
 		$("#winCount").text(winCount);
 		$("#lossCount").text(lossCount);
-	})
+	}
 
 function init() {
 	answer = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -77,6 +77,7 @@ function init() {
 	$("#answer").append(newAnswerDiv);
 	$("#newAnswerDiv").append(newAnswer);
 	$("#guessedWrong").text("");
+	$("#message").text("");
 	setPic();
 	console.log(answer);
 }
