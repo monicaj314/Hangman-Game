@@ -34,9 +34,8 @@ $("body").on("keypress", function(e) {
 		wrongGuess.push(e.key);
 		wrongAnswer++
 		setPic();
+		$("#guesses-remaining").html("Guesses Remaining: " + maxGuesses);
         $("#guessedWrong").text(wrongGuess.join(", "));
-        console.log(wrongGuess);
-        console.log(e.key);
     } else {
     	$("#warning").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
     	}
