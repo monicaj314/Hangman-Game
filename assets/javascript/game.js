@@ -13,7 +13,7 @@ var hangman = ["assets/images/gallow.jpg", "assets/images/1wrong.jpg", "assets/i
 var wrongAnswer = 0;
 
 
-
+//initial game state
 init();
 $("#message").text("Press any key to start.");
 function setPic() {
@@ -28,9 +28,6 @@ $("body").on("keyup", function(e) {
 	var guess = e.key.toLowerCase();
 	var alreadyGuessed = wrongGuess.indexOf(guess);
 	var rightGuess = answer.indexOf(guess);
-	// if (rightGuess.isUpperCase(guess)) {
-	// 	guess = guess.toLowerCase();
-	// }
 	if (rightGuess >= 0) {
 		newAnswer = replaceEmptyLetter(newAnswer, guess, rightGuess, answer);
 		$("#newAnswerDiv").text(newAnswer);
@@ -42,12 +39,12 @@ $("body").on("keyup", function(e) {
 		$("#guesses-remaining").text("Guesses Remaining: " + maxGuesses);
         $("#guessedWrong").text(wrongGuess.join(", "));
     } else {
-    	$("#message").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
+    	$("#message").text("Whoops! You've already guessed " + e.key + ". Try a different letter!");
     	}
 	}	
 	 checkGameStatus();
 })
-
+//determines win/loss behavior based on game status
 	function checkGameStatus(){
 	if (gameOver) {
 		init();
@@ -65,6 +62,8 @@ $("body").on("keyup", function(e) {
 		$("#lossCount").text(lossCount);
 	}
 
+
+//resets the game
 function init() {
 	answer = wordBank[Math.floor(Math.random() * wordBank.length)];
 	wrongGuess = [];
