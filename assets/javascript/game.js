@@ -16,7 +16,7 @@ var wrongAnswer = 0;
 init();
 
 function setPic() {
-  $("#gallowimg").attr("src", hangman[wrongAnswer]);
+  $("#gallowImg").attr("src", hangman[wrongAnswer]);
 }
 
 //wrong guesses collected in a separate container. Right guesses fill in the blanks
