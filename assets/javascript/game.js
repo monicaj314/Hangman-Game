@@ -80,6 +80,7 @@ function init() {
 	$("#newAnswerDiv").append(newAnswer);
 	$("#guessedWrong").text("");
 	$("#message").text("");
+	$("#guesses-remaining").text("Guesses Remaining: " + maxGuesses);
 	setPic();
 	console.log(answer);
 }
