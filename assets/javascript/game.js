@@ -13,15 +13,17 @@ var hangman = ["assets/images/gallow.jpg", "assets/images/1wrong.jpg", "assets/i
 var wrongAnswer = 0;
 
 
-init();
 
+init();
+$("#message").text("Press any key to start.");
 function setPic() {
   $("#gallowImg").attr("src", hangman[wrongAnswer]);
 }
 
 //wrong guesses collected in a separate container. Right guesses fill in the blanks
 
-$("body").on("keypress", function(e) {
+$("body").on("keyup", function(e) {
+	$("#message").text("");
 	if (!gameOver) {
 	var guess = e.key.toLowerCase();
 	var alreadyGuessed = wrongGuess.indexOf(guess);
@@ -57,6 +59,7 @@ $("body").on("keypress", function(e) {
 	} 	else if (maxGuesses < 1) {
 		lossCount++ ;
 		gameOver=true;
+		$("#message").text("Game over ^_^;; Press any key to restart.");
 	}
 		$("#winCount").text(winCount);
 		$("#lossCount").text(lossCount);

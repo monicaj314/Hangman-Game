@@ -36,8 +36,11 @@ h5 {
 	border: dotted black 1px;
 	font-size:1.5em;
 }
-#win-message {
+#message {
 	text-align:center;
+}
+#guesses-remaining {
+	font-size: 2em;
 }
 .bordered{
 	border: solid black 1px;
