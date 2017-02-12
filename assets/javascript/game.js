@@ -58,8 +58,8 @@ $("body").on("keyup", function(e) {
     	gameOver=true;
 	} 	else if (maxGuesses < 1) {
 		lossCount++ ;
-		gameOver=true;
 		$("#message").text("Game over ^_^;; Press any key to restart.");
+		gameOver=true;
 	}
 		$("#winCount").text(winCount);
 		$("#lossCount").text(lossCount);
