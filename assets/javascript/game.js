@@ -23,9 +23,12 @@ function setPic() {
 
 $("body").on("keypress", function(e) {
 	if (!gameOver) {
-	var guess = e.key;
+	var guess = e.key.toLowerCase();
 	var alreadyGuessed = wrongGuess.indexOf(guess);
 	var rightGuess = answer.indexOf(guess);
+	// if (rightGuess.isUpperCase(guess)) {
+	// 	guess = guess.toLowerCase();
+	// }
 	if (rightGuess >= 0) {
 		newAnswer = replaceEmptyLetter(newAnswer, guess, rightGuess, answer);
 		$("#newAnswerDiv").text(newAnswer);
