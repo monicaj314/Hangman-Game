@@ -41,6 +41,7 @@ $("body").on("keypress", function(e) {
     	}
 	}	
 })
+
 	$("body").on("keyup", function() {
 	if (gameOver) {
 		init();
@@ -57,6 +58,7 @@ $("body").on("keypress", function(e) {
 		$("#winCount").text(winCount);
 		$("#lossCount").text(lossCount);
 	})
+
 function init() {
 	answer = wordBank[Math.floor(Math.random() * wordBank.length)];
 	wrongGuess = [];
