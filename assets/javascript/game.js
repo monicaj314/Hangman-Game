@@ -64,6 +64,7 @@ function init() {
 	newAnswer = "";
 	maxGuesses = 7;
 	gameOver = false;
+	wrongAnswer = 0;
 	for (var i = 0; i < answer.length; i++) {
 		newAnswer = newAnswer + "_";
 	} 
@@ -72,6 +73,7 @@ function init() {
 	$("#answer").append(newAnswerDiv);
 	$("#newAnswerDiv").append(newAnswer);
 	$("#guessedWrong").text("");
+	setPic();
 	console.log(answer);
 }
 
