@@ -16,7 +16,7 @@ var wrongAnswer = 0;
 init();
 
 function setPic() {
-  $("#gallow").html('<img src=' + hangman[wrongAnswer] + ' width="450">');
+  $("#gallowimg").attr("src", hangman[wrongAnswer]);
 }
 
 //wrong guesses collected in a separate container. Right guesses fill in the blanks
@@ -34,7 +34,7 @@ $("body").on("keypress", function(e) {
 		wrongGuess.push(e.key);
 		wrongAnswer++
 		setPic();
-		$("#guesses-remaining").html("Guesses Remaining: " + maxGuesses);
+		$("#guesses-remaining").text("Guesses Remaining: " + maxGuesses);
         $("#guessedWrong").text(wrongGuess.join(", "));
     } else {
     	$("#warning").text("Whoops! You've already guessed " + e.key + ". Try a different letter!").fadeIn(250).fadeOut(3000);
