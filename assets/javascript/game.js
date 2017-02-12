@@ -15,7 +15,7 @@ var wrongAnswer = 0;
 
 //initial game state
 init();
-$("#message").text("Press any key to start.");
+$("#message").text("Press a letter key to start.");
 function setPic() {
   $("#gallowImg").attr("src", hangman[wrongAnswer]);
 }
